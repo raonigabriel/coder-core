@@ -38,6 +38,12 @@ ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
     GRADLE_HOME=/usr/share/java/gradle
 ```
 
+---
+## Licenses
+
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+---
 ## Disclaimer
 * This code comes with no warranty. Use it at your own risk.
 * I don't like Apple. Fuck off, fan-boys.
