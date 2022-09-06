@@ -21,8 +21,8 @@ The **not-that-lightweight** actually means that while [ubuntu:latest](https://h
 - Multi arch (amd64 && arm64)
  # Usage
 
-```sh
-# docker run -it ghcr.io/raonigabriel/coder-core:latest
+```
+# fdocker run -it ghcr.io/raonigabriel/coder-core:latest
 coder@65dc49a66e7c:~$
 ```
  
