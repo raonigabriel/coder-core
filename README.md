@@ -22,7 +22,7 @@ The **not-that-lightweight** actually means that while [ubuntu:latest](https://h
  # Usage
 
 ```
-# fdocker run -it ghcr.io/raonigabriel/coder-core:latest
+# docker run -it ghcr.io/raonigabriel/coder-core:latest
 coder@65dc49a66e7c:~$
 ```
  
