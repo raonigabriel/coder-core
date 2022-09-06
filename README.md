@@ -10,7 +10,7 @@ The **not-that-lightweight** actually means that while [ubuntu:latest](https://h
 2. Its is Alpine, but using **bash** instead of **ash**.
 3. By using **tini**, we ensure that child processes are correctly reaped.
 4. Default user **coder** and group **coder** using UID and GID = 1000, to ease volume-mapping permissions issues.
-5. Passwordless, **sudo** support: easily install extra packages with apk (e.g, ```sh sudo apk add docker-cli  jq```) 
+5. Passwordless, **sudo** support: easily install extra packages with apk (e.g, ```sudo apk add docker-cli  jq```) 
 7. Preinstalled node (v18.6.0) and npm (8.10.0) !!!
 8. Preinstalled tooling (git, curl, socat, openssh-client, nano, unzip, brotli, zstd, xz) !!!
 9. Image is hosted on [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), hence we get fast pulls whenever using this image with GitHub Actions.
