@@ -1,5 +1,5 @@
 # coder-core
-
+---
 This is my opinionated attempt to build a "lightweight" docker image powerful enough to run [vscode remote containers](https://code.visualstudio.com/docs/remote/containers-tutorial) or to be used as a base image to create [docker container GitHub Actions](https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action). 
 
 The **not-that-lightweight** actually means that while [ubuntu:latest](https://hub.docker.com/_/ubuntu) is ~78MB, this image is ~90MB. Yes, this translates to **extra 12MB** compared to ubuntu, but the preinstalled tools are **by far** more comprehensive (see bellow).
@@ -13,16 +13,16 @@ The **not-that-lightweight** actually means that while [ubuntu:latest](https://h
 5. Passwordless, **sudo** support: easily install extra packages with apk (e.g, ```sh sudo apk add docker-cli  jq```) 
 7. Preinstalled node (v18.6.0) and npm (8.10.0) !!!
 8. Preinstalled tooling (git, curl, socat, openssh-client, nano, unzip, brotli, zstd, xz) !!!
+9. Image is hosted on [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), hence we get fast pulls whenever using this image with GitHub Actions.
 
 # Guidelines that I follow
  - Whenever possible, install software directly from the Alpine repositories, i.e. use apk instead of downloading / manually installing them.
  - Keep it small: do not cross the 100MB image size boundary.
- - Multi arch (amd64 && arm64)
-
+- Multi arch (amd64 && arm64)
  # Usage
 
 ```sh
-docker run -it ghcr.io/raonigabriel/coder-core:latest
+# docker run -it ghcr.io/raonigabriel/coder-core:latest
 coder@65dc49a66e7c:~$
 ```
  
@@ -37,6 +37,8 @@ ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
     MAVEN_HOME=/usr/share/java/maven-3 \
     GRADLE_HOME=/usr/share/java/gradle
 ```
+
+See my [spring-qrcode-example](https://github.com/raonigabriel/spring-qrcode-example/tree/master/.devcontainer) for a full example on how to [setup a remote container](https://code.visualstudio.com/docs/remote/create-dev-container) for development.
 
 ---
 ## Licenses
