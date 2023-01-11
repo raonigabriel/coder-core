@@ -1,4 +1,4 @@
-FROM alpine:3.17.0
+FROM alpine:3.17
 
 # Installs shell related tools
 RUN apk --no-cache add sudo tini shadow bash \
