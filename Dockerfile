@@ -1,4 +1,4 @@
-FROM alpine:3.17.0
+FROM alpine:3.17.1
 
 # Installs shell related tools
 RUN apk --no-cache add sudo tini shadow bash \
@@ -7,7 +7,7 @@ RUN apk --no-cache add sudo tini shadow bash \
 # Installs some basic tools
   git curl socat openssh-client nano unzip brotli zstd xz \
 # Installs node and npm
-  npm=8.10.0-r0
+  npm=9.1.2-r0
  
 ARG USERNAME=coder
 ARG USER_UID=1000
