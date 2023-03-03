@@ -7,6 +7,7 @@ RUN apk --no-cache add sudo tini shadow bash \
 # Installs some basic tools
   git curl socat openssh-client nano unzip brotli zstd xz \
 # Installs node and npm
+  nodejs=18.14.2-r0 \
   npm=9.1.2-r0
  
 ARG USERNAME=coder
