@@ -1,18 +1,14 @@
-FROM alpine:3.17.3
+FROM alpine:3.18.4
 
 # Installs shell related tools
 RUN apk --no-cache add sudo tini shadow bash \
 # Installs compatibility libs
   gcompat libc6-compat libgcc libstdc++ \
 # Installs some basic tools
-  git curl socat openssh-client nano unzip brotli zstd xz
+  git curl socat openssh-client nano unzip brotli zstd xz \
+# Installs node and npm
+  nodejs npm
 
-# Installs "older" node-16 and npm-8
-# Hack: to install such versions, we use repository from previous Alpine (3.16)
-RUN sed -i 's/17/16/g' /etc/apk/repositories && \
-    apk --no-cache add nodejs=16.19.1-r0 npm=8.10.0-r0 && \
-    sed -i 's/16/17/g' /etc/apk/repositories  
- 
 ARG USERNAME=coder
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
